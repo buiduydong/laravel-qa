@@ -7,6 +7,7 @@ use Str;
 
 class Question extends Model
 {
+    protected $table = 'questions';
     protected $fillable = ['title', 'body'];
 
     public function user() {

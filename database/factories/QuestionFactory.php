@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Question::class, function (Faker $faker) {
     return [
-        'title' => $faker->title,
+        'title' => rtrim($faker->sentence(rand(5, 10)), "."),
         'body' => $faker->paragraph,
         'answers' => $faker->randomDigit,
         'views' => $faker->randomDigit,
