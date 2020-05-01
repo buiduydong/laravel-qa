@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('updateAndDelete-question', function ($user, $question) {
+            return $user->id === $question->user_id;
+        });
+        
     }
 }
